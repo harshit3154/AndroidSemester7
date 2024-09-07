@@ -87,7 +87,7 @@ class CustomViewDemo : AppCompatActivity() {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if(resultCode==PICK_IMAGE && resultCode== Activity.RESULT_OK){
+        if(requestCode==PICK_IMAGE && resultCode== Activity.RESULT_OK){
             selectedImageUri=data?.data
             selectedImageUri.let{
                 val bitmap:Bitmap=MediaStore.Images.Media.getBitmap(this.contentResolver,it)

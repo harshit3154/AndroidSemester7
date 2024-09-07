@@ -1,6 +1,7 @@
 package com.example.customgridviewdemo2
 
 import android.content.Context
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -21,7 +22,8 @@ class CustomGridViewAdapter(context: Context,
             text=view.findViewById(R.id.tv)
             img=view.findViewById(R.id.image)
             var mItem=item[position]
-            img.setImageDrawable(context.resources.getDrawable(mItem.img))
+//            img.setImageDrawable(context.resources.getDrawable(mItem.img))
+            img.setImageURI(Uri.parse(mItem.img.toString()))
             return view
         }
 }
